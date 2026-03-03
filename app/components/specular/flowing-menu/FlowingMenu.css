@@ -1,0 +1,143 @@
+.menu-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    padding: 10px 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 20px;
+    padding: 0;
+    gap: 0;
+    border: 1px solid #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.menu__item {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    background: #0f0f0f;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    margin: 0;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.menu__item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.menu__item:hover {
+    background: transparent;
+    border-color: transparent;
+}
+
+.menu__item-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 100%;
+    padding: 0 24px;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.menu__item-link:hover {
+    color: inherit;
+}
+
+.menu__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #ef4444;
+}
+
+.marquee {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: translate3d(0, 0, 0);
+    border-radius: 8px;
+}
+
+.marquee__inner-wrap {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee__inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: fit-content;
+    will-change: transform;
+}
+
+.marquee__part {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    padding: 0 40px;
+}
+
+.marquee .menu__icon {
+    color: #ffffff;
+}
+
+.marquee span {
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.3rem;
+    font-family: var(--font-display);
+    line-height: 1;
+}
+
+.marquee__img {
+    width: 80px;
+    height: 40px;
+    margin: 0 20px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+@media (max-width: 768px) {
+
+    .menu__item-link,
+    .marquee span {
+        font-size: 1rem;
+    }
+
+    .marquee__img {
+        width: 60px;
+        height: 30px;
+    }
+}

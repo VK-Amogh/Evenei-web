@@ -1,0 +1,144 @@
+.footer {
+  padding: 80px var(--space-6) 48px;
+  background: #050505;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.footerMain {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .footerMain {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footerLogo {
+  font-size: 1.625rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footerLogo:hover {
+  opacity: 0.8;
+}
+
+.footerTagline {
+  font-size: 0.9375rem;
+  color: #666666;
+}
+
+.footerNav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.footerNavGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footerNavTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footerLink {
+  font-size: 0.9375rem;
+  color: #666666;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.footerBottom {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footerCopyright {
+  font-size: 0.875rem;
+  color: #444444;
+}
+
+.footerSocials {
+  display: flex;
+  gap: 12px;
+}
+
+.footerSocial {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.footerSocial:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px) scale(1.1);
+}
+
+.footerSocial svg {
+  width: 18px;
+  height: 18px;
+  color: #666666;
+  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.footerSocial:hover svg {
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 64px var(--space-5) 40px;
+  }
+
+  .footerNav {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

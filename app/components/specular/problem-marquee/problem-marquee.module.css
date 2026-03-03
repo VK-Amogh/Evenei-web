@@ -1,0 +1,23 @@
+.marquee {
+    width: 100%;
+    overflow: visible;
+    position: relative;
+    padding: 60px 0;
+    margin: -60px 0;
+    mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+}
+
+.scroller {
+    display: flex;
+    width: fit-content;
+}
+
+.copy {
+    display: flex;
+    gap: 2rem;
+    /* Should match the gap in grid or home.module.css */
+    padding-right: 2rem;
+    /* Add spacing between copies */
+    width: max-content;
+}

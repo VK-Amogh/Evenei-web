@@ -1,0 +1,166 @@
+/* Base animated element */
+.animated {
+  will-change: transform, opacity;
+}
+
+.animatedText {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.visible {
+  animation-fill-mode: both;
+}
+
+/* ==================== SLIDE ANIMATIONS (Primary - used for all boxes) ==================== */
+.slide-left {
+  animation: slideInLeft 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-right {
+  animation: slideInRight 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-up {
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-down {
+  animation: slideInDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ==================== ALL OTHER ANIMATION NAMES → CLEAN SLIDE EQUIVALENTS ==================== */
+/* Boxes/cards only ever slide — no flips, rotations, morphs, or elastic bounces */
+
+.zoom {
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.rotate {
+  animation: slideInLeft 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.flip {
+  animation: slideInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.swing {
+  animation: slideInLeft 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.elastic {
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.wave {
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cascade {
+  animation: slideInLeft 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.glide {
+  animation: slideInLeft 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.morph {
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.spiral {
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.shimmer {
+  animation: slideInRight 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pulse-grow {
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.float {
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ==================== TEXT ANIMATIONS (kept distinct for text elements) ==================== */
+.text-reveal {
+  animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  overflow: hidden;
+}
+
+.letter-spacing {
+  animation: slideInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ==================== MOTION BLUR → CLEAN SLIDE EQUIVALENTS ==================== */
+.motion-blur-left {
+  animation: slideInLeft 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.motion-blur-right {
+  animation: slideInRight 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.motion-blur-up {
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ==================== KEYFRAMES ==================== */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+  }
+}

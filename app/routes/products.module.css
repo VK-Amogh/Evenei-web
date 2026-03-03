@@ -1,0 +1,528 @@
+/* Products Page */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    background: #0a0a0a;
+    min-height: 100vh;
+}
+
+/* Hero */
+.hero {
+    width: 100%;
+    min-height: 60vh;
+    padding: 180px var(--space-7) 100px;
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.heroBackground {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: auto;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 12px 20px;
+    background: #141414;
+    border-radius: 100px;
+}
+
+.breadcrumbHome {
+    color: #888888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbHome:hover {
+    color: #ffffff;
+}
+
+.breadcrumbSeparator {
+    color: #444444;
+}
+
+.breadcrumbCurrent {
+    color: #137e3e;
+}
+
+.heroTitle {
+    font-size: clamp(3.5rem, 10vw, 6rem);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    line-height: 0.95;
+    color: #ffffff;
+}
+
+.heroTitleAccent {
+    color: #137e3e;
+}
+
+.heroDescription {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 620px;
+}
+
+/* Product Section */
+.productSection {
+    width: 100%;
+    padding: 100px var(--space-7) 160px;
+    background: #050505;
+}
+
+.productContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.productLabel {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888888;
+    margin-left: 12px;
+}
+
+.specularCard {
+    background: #0a0a0a;
+    border: 1px solid #1e1e1e;
+    border-radius: 32px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 1024px) {
+    .specularCard {
+        grid-template-columns: 1.2fr 1fr;
+    }
+}
+
+.specularContent {
+    padding: 64px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    z-index: 2;
+    position: relative;
+}
+
+.iconContainer {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.specularIcon {
+    color: #137e3e;
+    width: 28px;
+    height: 28px;
+}
+
+.productTitle {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.productDescription {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 540px;
+}
+
+.featureTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    font-size: 0.8125rem;
+    color: #cccccc;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.exploreButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: #ffffff;
+    color: #0a0a0a;
+    border-radius: 100px;
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exploreButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.buttonIcon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.exploreButton:hover .buttonIcon {
+    transform: translateX(4px);
+}
+
+/* Smart Spectacles / HUD Visual - Technical Blueprint */
+.specularVisual {
+    position: relative;
+    background-color: #050505;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    min-height: 400px;
+    /* Slightly taller for standalone page */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-left: 1px solid #1e1e1e;
+}
+
+.visualGrid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(19, 126, 62, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(19, 126, 62, 0.1) 1px, transparent 1px);
+    background-size: 100px 100px;
+    pointer-events: none;
+}
+
+.glassesContainer {
+    position: relative;
+    width: 380px;
+    /* Increased size for featured page */
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    z-index: 5;
+}
+
+.glassFrame {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transform: rotateX(10deg);
+    transform-style: preserve-3d;
+    animation: glassesFloat 8s ease-in-out infinite;
+}
+
+.lensLeft,
+.lensRight {
+    width: 160px;
+    height: 108px;
+    background: rgba(10, 10, 10, 0.6);
+    border: 1px solid rgba(19, 126, 62, 0.5);
+    /* Blueprint Green Outline */
+    border-top: 2px solid rgba(19, 126, 62, 0.7);
+    border-radius: 14px 14px 54px 54px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.lensLeft::after,
+.lensRight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+    background-size: 200% 200%;
+    animation: glossPass 5s ease-in-out infinite;
+}
+
+.lensLeft:hover,
+.lensRight:hover {
+    border-color: #137e3e;
+    box-shadow: 0 0 0 1px rgba(19, 126, 62, 0.3);
+}
+
+.bridge {
+    width: 28px;
+    height: 3px;
+    background: rgba(19, 126, 62, 0.6);
+    margin-top: -24px;
+}
+
+/* Precise HUD - No Glow */
+.hudOverlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hudCrosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    /* Corners only */
+    background:
+        linear-gradient(#06b6d4, #06b6d4) top left,
+        linear-gradient(#06b6d4, #06b6d4) top right,
+        linear-gradient(#06b6d4, #06b6d4) bottom left,
+        linear-gradient(#06b6d4, #06b6d4) bottom right;
+    background-size: 2px 6px;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+}
+
+.hudCrosshair::before,
+.hudCrosshair::after {
+    content: '';
+    position: absolute;
+    background: #06b6d4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hudCrosshair::before {
+    width: 4px;
+    height: 1px;
+}
+
+.hudCrosshair::after {
+    width: 1px;
+    height: 4px;
+}
+
+.hudDataTop {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hudDataTop::before,
+.hudDataTop::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-top: 1px solid rgba(6, 182, 212, 0.5);
+    border-left: 1px solid rgba(6, 182, 212, 0.5);
+}
+
+.hudDataTop::after {
+    transform: scaleX(-1);
+}
+
+.hudDataBottom {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-family: monospace;
+    /* Fallback since var might not be scoped same way, but usually global */
+    font-size: 10px;
+    color: #06b6d4;
+    letter-spacing: 1px;
+}
+
+.hudDataBottom::before {
+    content: 'SYS.READY';
+    animation: dataFlicker 3s infinite steps(1);
+}
+
+.hudReticle {
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 50%;
+    border-top-color: #06b6d4;
+    animation: spin 4s linear infinite;
+}
+
+.hudDataRight {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hudDataRight::before,
+.hudDataRight::after {
+    content: '';
+    width: 3px;
+    height: 3px;
+    background: #06b6d4;
+}
+
+.scanLine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #10b981;
+    animation: scanDown 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    opacity: 0.8;
+}
+
+@keyframes glassesFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotateX(10deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotateX(12deg);
+    }
+}
+
+@keyframes scanDown {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+@keyframes dataFlicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    52% {
+        opacity: 0.2;
+    }
+
+    54% {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glossPass {
+    0% {
+        background-position: 200% 200%;
+    }
+
+    100% {
+        background-position: -200% -200%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .hero {
+        padding: 130px var(--space-5) 100px;
+        min-height: auto;
+    }
+
+    .heroContent {
+        gap: 28px;
+    }
+
+    .productSection {
+        padding: 80px var(--space-5);
+    }
+
+    .specularContent {
+        padding: 40px 32px;
+    }
+
+    .productTitle {
+        font-size: 2.25rem;
+    }
+}

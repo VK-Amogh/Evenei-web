@@ -1,0 +1,566 @@
+/* Pricing Page - Premium Value-First Design */
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  background: #0a0a0a;
+  min-height: 100vh;
+}
+
+/* Hero - Clean Centered */
+.hero {
+  width: 100%;
+  min-height: 70vh;
+  padding: 180px var(--space-7) 100px;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555555;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 12px 20px;
+  background: #141414;
+  border-radius: 100px;
+}
+
+.breadcrumbHome {
+  color: #888888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbHome:hover {
+  color: #ffffff;
+}
+
+.breadcrumbSeparator {
+  color: #444444;
+}
+
+.breadcrumbCurrent {
+  color: #137e3e;
+}
+
+.heroTitle {
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  color: #ffffff;
+}
+
+.heroTitleAccent {
+  color: #137e3e;
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 620px;
+}
+
+/* Philosophy Section - Horizontal Layout */
+.philosophySection {
+  width: 100%;
+  padding: 140px var(--space-7);
+  background: #0e0e0e;
+}
+
+.philosophyContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 80px;
+}
+
+@media (min-width: 1024px) {
+  .philosophyContent {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 120px;
+    align-items: start;
+  }
+}
+
+.philosophyLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: sticky;
+  top: 120px;
+  padding: 40px 44px;
+  background: #141414;
+  border-radius: 24px;
+  border: 1px solid #1e1e1e;
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #777777;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.labelDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #137e3e;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.3);
+  }
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.titleAccent {
+  color: #137e3e;
+}
+
+.sectionDescription {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.philosophyRight {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.designCard {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 32px 36px;
+  background: #161616;
+  border: 1px solid #222222;
+  border-radius: 20px;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.designCard:hover {
+  border-color: #333333;
+  background: #1a1a1a;
+  transform: translateX(12px);
+}
+
+.designIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #1a3d29, #0f2318);
+  border: 1px solid #264d36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.designCard:hover .designIcon {
+  background: #137e3e;
+  transform: scale(1.08);
+}
+
+.designIcon svg {
+  width: 26px;
+  height: 26px;
+  color: #2ecc71;
+  transition: color 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.designCard:hover .designIcon svg {
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
+.designText {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Principles Section - Feature Cards */
+.principlesSection {
+  width: 100%;
+  padding: 140px var(--space-7);
+  background: #f7f7f7;
+}
+
+.principlesContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.principlesHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 80px;
+  text-align: center;
+  align-items: center;
+  padding: 48px 56px;
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionLabelDark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #777777;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.labelDotDark {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #137e3e;
+}
+
+.sectionTitleDark {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #0a0a0a;
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .principlesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.principleCard {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 48px 44px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.4s ease, border-color 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.principleCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #137e3e, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.principleCard:hover {
+  border-color: #d0d0d0;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.1);
+  transform: translateY(-12px);
+}
+
+.principleCard:hover::before {
+  opacity: 1;
+}
+
+.principleIcon {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.principleCard:hover .principleIcon {
+  transform: scale(1.08);
+}
+
+.principleIcon svg {
+  width: 34px;
+  height: 34px;
+  color: #ffffff;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.principleCard:hover .principleIcon svg {
+  transform: scale(1.15);
+}
+
+.principleTitle {
+  font-size: 1.4375rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  letter-spacing: -0.02em;
+}
+
+.principleText {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Statement Section */
+.statementSection {
+  width: 100%;
+  padding: 140px var(--space-7);
+  background: #0a0a0a;
+}
+
+.statementContent {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.statementBox {
+  padding: 72px 64px;
+  background: #141414;
+  border: 1px solid #264d36;
+  border-radius: 36px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease;
+}
+
+.statementBox:hover {
+  transform: scale(1.02);
+  border-color: #2ecc71;
+}
+
+.statementQuote {
+  font-size: clamp(1.5rem, 3.5vw, 2.125rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+
+.statementAccent {
+  color: #137e3e;
+}
+
+.statementSubtext {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* CTA Section */
+.ctaSection {
+  width: 100%;
+  padding: 120px var(--space-7);
+  background: #0e0e0e;
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 64px 56px;
+  background: #141414;
+  border-radius: 32px;
+  border: 1px solid #1e1e1e;
+}
+
+.ctaTitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+
+.ctaText {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 20px 40px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border: none;
+  background: #ffffff;
+  color: #0a0a0a;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.ctaButton:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.15);
+}
+
+.ctaIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: arrowSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowSlide {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.ctaButton:hover .ctaIcon {
+  animation: none;
+  transform: translateX(6px);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero {
+    padding: 130px var(--space-5) 100px;
+    min-height: auto;
+  }
+
+  .heroContent {
+    gap: 28px;
+  }
+
+  .philosophySection,
+  .principlesSection,
+  .statementSection,
+  .ctaSection {
+    padding: 100px var(--space-5);
+  }
+
+  .philosophyLeft {
+    position: static;
+    padding: 32px;
+  }
+
+  .designCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px;
+  }
+
+  .designCard:hover {
+    transform: translateY(-8px);
+  }
+
+  .principlesHeader {
+    padding: 36px 32px;
+    margin-bottom: 48px;
+  }
+
+  .principleCard {
+    padding: 40px 36px;
+  }
+
+  .statementBox {
+    padding: 48px 32px;
+  }
+
+  .ctaContent {
+    padding: 48px 32px;
+  }
+
+  .ctaButton {
+    padding: 18px 32px;
+  }
+}
