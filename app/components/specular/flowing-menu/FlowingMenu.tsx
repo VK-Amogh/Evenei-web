@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
-import gsap from 'gsap';
+import { useRef, useEffect, useState } from 'react';
+import type { ReactNode, MouseEvent } from 'react';
 import { Scale, DollarSign, BatteryLow, TrendingDown, Wrench } from 'lucide-react';
 
 import './FlowingMenu.css';
@@ -30,7 +30,7 @@ interface MenuItemProps extends MenuItem {
     borderColor: string;
 }
 
-const iconMap: { [key: string]: React.ReactNode } = {
+const iconMap: { [key: string]: ReactNode } = {
     scale: <Scale size={20} />,
     dollar: <DollarSign size={20} />,
     battery: <BatteryLow size={20} />,
@@ -71,7 +71,8 @@ function MenuItemComponent({ link, text, icon, image, rowIndex, speed, textColor
     const itemRef = useRef<HTMLDivElement>(null);
     const marqueeRef = useRef<HTMLDivElement>(null);
     const marqueeInnerRef = useRef<HTMLDivElement>(null);
-    const animationRef = useRef<gsap.core.Tween | null>(null);
+    const animationRef = useRef<any>(null);
+    const gsapRef = useRef<any>(null);
     const [repetitions, setRepetitions] = useState(4);
 
     const animationDefaults = { duration: 0.6, ease: 'expo' };
@@ -87,6 +88,13 @@ function MenuItemComponent({ link, text, icon, image, rowIndex, speed, textColor
         const yDiff = y - y2;
         return xDiff * xDiff + yDiff * yDiff;
     };
+
+    // Load gsap dynamically on client only
+    useEffect(() => {
+        import('gsap').then((mod) => {
+            gsapRef.current = mod.gsap || mod.default || mod;
+        });
+    }, []);
 
     useEffect(() => {
         const calculateRepetitions = () => {
@@ -113,9 +121,8 @@ function MenuItemComponent({ link, text, icon, image, rowIndex, speed, textColor
 
     useEffect(() => {
         const setupMarquee = () => {
-            if (!marqueeInnerRef.current) return;
-
-
+            const gsap = gsapRef.current;
+            if (!gsap || !marqueeInnerRef.current) return;
 
             const marqueeContent = marqueeInnerRef.current.querySelector('.marquee__part') as HTMLElement | null;
             if (!marqueeContent) return;
@@ -140,8 +147,8 @@ function MenuItemComponent({ link, text, icon, image, rowIndex, speed, textColor
             );
         };
 
-        // Initial setup
-        const timer = setTimeout(setupMarquee, 100);
+        // Initial setup - slight delay to let gsap load
+        const timer = setTimeout(setupMarquee, 200);
 
         // Re-setup on resize/font load ensures width is correct
         const resizeObserver = new ResizeObserver(() => {
@@ -162,8 +169,9 @@ function MenuItemComponent({ link, text, icon, image, rowIndex, speed, textColor
         };
     }, [text, image, repetitions, speed, rowIndex]);
 
-    const handleMouseEnter = (ev: React.MouseEvent<HTMLAnchorElement>) => {
-        if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
+    const handleMouseEnter = (ev: MouseEvent<HTMLAnchorElement>) => {
+        const gsap = gsapRef.current;
+        if (!gsap || !itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
         const rect = itemRef.current.getBoundingClientRect();
         const x = ev.clientX - rect.left;
         const y = ev.clientY - rect.top;
@@ -175,8 +183,9 @@ function MenuItemComponent({ link, text, icon, image, rowIndex, speed, textColor
             .to(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0);
     };
 
-    const handleMouseLeave = (ev: React.MouseEvent<HTMLAnchorElement>) => {
-        if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
+    const handleMouseLeave = (ev: MouseEvent<HTMLAnchorElement>) => {
+        const gsap = gsapRef.current;
+        if (!gsap || !itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
         const rect = itemRef.current.getBoundingClientRect();
         const x = ev.clientX - rect.left;
         const y = ev.clientY - rect.top;
