@@ -14,7 +14,7 @@ import "./styles/tokens/spacings.css";
 import "./styles/tokens/typography.css";
 import "./styles/theme.css";
 import { useColorScheme } from "@dazl/color-scheme/react";
-import favicon from "/favicon.svg";
+import favicon from "/favicon.png";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -26,7 +26,7 @@ export const links: Route.LinksFunction = () => [
   {
     rel: "icon",
     href: favicon,
-    type: "image/svg+xml",
+    type: "image/png",
   },
   {
     rel: "stylesheet",

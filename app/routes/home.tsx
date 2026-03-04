@@ -20,9 +20,6 @@ import {
   Wrench,
   FlaskConical,
   Accessibility,
-  Github,
-  Linkedin,
-  Twitter,
   ArrowUpRight,
 } from "lucide-react";
 import PixelBlast from "~/components/pixel-blast/pixel-blast";
