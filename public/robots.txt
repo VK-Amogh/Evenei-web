@@ -1,0 +1,25 @@
+# EvenEi - robots.txt
+# https://www.evenei.com
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.evenei.com/sitemap.xml
+
+# Disallow internal/system paths
+Disallow: /api/
+Disallow: /_data/
+Disallow: /build/
+Disallow: /node_modules/
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing-specific directives
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
