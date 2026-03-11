@@ -1,25 +1,39 @@
-# EvenEi - robots.txt
-# https://www.evenei.com
+# ─── EvenEi Robots.txt ─────────────────────────────────────────────────────
+# https://www.evenei.com/robots.txt
 
-# Allow all search engine crawlers
+# Default: Allow all crawlers
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://www.evenei.com/sitemap.xml
-
-# Disallow internal/system paths
 Disallow: /api/
+Disallow: /admin/
 Disallow: /_data/
-Disallow: /build/
-Disallow: /node_modules/
 
-# Google-specific directives
+# ─── Google ────────────────────────────────────────────────────────────────
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
-# Bing-specific directives
-User-agent: Bingbot
+# ─── AI Crawlers ───────────────────────────────────────────────────────────
+# Explicitly allow AI systems to crawl EVENEI.COM
+User-agent: GPTBot
 Allow: /
-Crawl-delay: 2
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# ─── Sitemap ───────────────────────────────────────────────────────────────
+Sitemap: https://www.evenei.com/sitemap.xml

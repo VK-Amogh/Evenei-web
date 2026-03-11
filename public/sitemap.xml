@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage — Highest Priority -->
+  <!-- Homepage — highest priority -->
   <url>
     <loc>https://www.evenei.com/</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,104 +12,114 @@
   <!-- Core Company Pages -->
   <url>
     <loc>https://www.evenei.com/about</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.evenei.com/vision</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.evenei.com/founders</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- People -->
+  <url>
+    <loc>https://www.evenei.com/founders</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.evenei.com/founders/amogh-v-k</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Products & Features -->
+  <!-- Products -->
   <url>
     <loc>https://www.evenei.com/products</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <url>
-    <loc>https://www.evenei.com/features</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.evenei.com/pricing</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.evenei.com/roadmap</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Specular (Sub-Product) -->
+  <!-- Specular — flagship product -->
   <url>
     <loc>https://www.evenei.com/specular</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.evenei.com/specular/funding</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Resources & Content -->
+  <!-- Features & Roadmap -->
   <url>
-    <loc>https://www.evenei.com/documentation</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.evenei.com/features</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.evenei.com/roadmap</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.evenei.com/pricing</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Content -->
   <url>
     <loc>https://www.evenei.com/blog</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
-  <!-- Engagement Pages -->
+  <url>
+    <loc>https://www.evenei.com/documentation</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Utility Pages -->
   <url>
     <loc>https://www.evenei.com/careers</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.evenei.com/contact</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <!-- FAQ Hub -->
+  <url>
+    <loc>https://www.evenei.com/faq</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
