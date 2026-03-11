@@ -86,19 +86,23 @@ export default function FounderDetails({ loaderData }: Route.ComponentProps) {
                 data={generateFAQSchema([
                     {
                         question: "Who is Amogh V K?",
-                        answer: `${founder.name} is the founder of EvenEi Private Limited, a technology company building Everyday Intelligence. ${founder.bio}`,
+                        answer: "Amogh V K is an engineer, systems architect, and technology entrepreneur and the founder of Evenei Private Limited. He specializes in building intelligent systems that integrate full-stack software, machine learning, embedded systems, computer vision, and electronic hardware design including PCB development. He is currently pursuing a B.Tech in Electronics and Communication Engineering at Manipal Institute of Technology Bengaluru through an AICTE scholarship. His work focuses on building technologies where software intelligence and physical hardware operate together as a unified system.",
                     },
                     {
                         question: "What does Amogh V K do?",
-                        answer: `${founder.name} is the ${founder.role} at EvenEi Private Limited. He works on the development of intelligent systems combining full-stack software, machine learning, embedded systems, and hardware-software integration.`,
+                        answer: "Amogh V K works on building intelligent systems that integrate hardware, software, and artificial intelligence. He specializes in full-stack software development, machine learning, embedded systems, computer vision, and electronic hardware design. As the founder of Evenei Private Limited, he develops technology platforms that combine AI, software infrastructure, and hardware integration. He is also involved in aerospace technology through the JAXA KiboCUBE program, contributing to the Attitude Determination and Control System (ADCS) for a 1U CubeSat. His engineering philosophy centers on systems thinking — designing technologies where hardware, software, and AI work together as integrated systems.",
                     },
                     {
                         question: "What company did Amogh V K found?",
-                        answer: `${founder.name} founded EvenEi Private Limited, a technology company focused on building integrated software, hardware, and AI systems. Their flagship product is Specular, the world's first memory-based smart glasses.`,
+                        answer: "Amogh V K founded Evenei Private Limited, a technology company focused on developing advanced platforms that combine full-stack software, embedded hardware, and AI-driven systems. One of his major ongoing projects at Evenei is Specular, a technology platform integrating intelligent software systems with modern computing infrastructure. The company focuses on building practical intelligent technologies that are scalable, reliable, and ethically designed.",
                     },
                     {
                         question: "Where did Amogh V K study?",
-                        answer: `${founder.name} studied Electronics and Communication Engineering at Manipal Institute of Technology, Bengaluru.`,
+                        answer: "Amogh V K is currently pursuing a Bachelor of Technology (B.Tech) in Electronics and Communication Engineering at the Manipal Institute of Technology Bengaluru, where he studies electronic systems, communications, and modern computing technologies. He entered the program through an AICTE scholarship.",
+                    },
+                    {
+                        question: "What is Amogh V K known for?",
+                        answer: "Amogh V K is known for building intelligent systems that integrate hardware, software, and artificial intelligence. He is the founder of Evenei Private Limited and the creator of Specular. He is also involved in aerospace technology as part of a team developing a Cube Satellite under the United Nations Office for Outer Space Affairs and Japan Aerospace Exploration Agency KiboCUBE program. His broader engineering philosophy centers on systems thinking and building practical intelligent technologies.",
                     },
                 ])}
             />
