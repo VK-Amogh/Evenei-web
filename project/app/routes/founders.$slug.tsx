@@ -1,6 +1,6 @@
 
 import type { Route } from "./+types/founders.$slug";
-import { generatePageMeta, generateBreadcrumbSchema, generatePersonSchema, JsonLd, SEO } from "~/lib/seo";
+import { generatePageMeta, generateBreadcrumbSchema, generatePersonSchema, generateFAQSchema, JsonLd, SEO } from "~/lib/seo";
 import { Link } from "react-router";
 import classNames from "classnames";
 import {
@@ -82,6 +82,26 @@ export default function FounderDetails({ loaderData }: Route.ComponentProps) {
                     github: founder.social.github,
                 })}
             />
+            <JsonLd
+                data={generateFAQSchema([
+                    {
+                        question: "Who is Amogh V K?",
+                        answer: `${founder.name} is the founder of EvenEi Private Limited, a technology company building Everyday Intelligence. ${founder.bio}`,
+                    },
+                    {
+                        question: "What does Amogh V K do?",
+                        answer: `${founder.name} is the ${founder.role} at EvenEi Private Limited. He works on the development of intelligent systems combining full-stack software, machine learning, embedded systems, and hardware-software integration.`,
+                    },
+                    {
+                        question: "What company did Amogh V K found?",
+                        answer: `${founder.name} founded EvenEi Private Limited, a technology company focused on building integrated software, hardware, and AI systems. Their flagship product is Specular, the world's first memory-based smart glasses.`,
+                    },
+                    {
+                        question: "Where did Amogh V K study?",
+                        answer: `${founder.name} studied Electronics and Communication Engineering at Manipal Institute of Technology, Bengaluru.`,
+                    },
+                ])}
+            />
             {/* Hero Section */}
             <section className={styles.hero}>
                 <div className={styles.heroBackground}>
@@ -114,7 +134,7 @@ export default function FounderDetails({ loaderData }: Route.ComponentProps) {
                             <div className={styles.imageWrapper}>
                                 <img
                                     src={founder.image}
-                                    alt={founder.name}
+                                    alt={`${founder.name} — Founder of EvenEi Private Limited`}
                                     className={classNames(
                                         styles.profileImage,
                                         founder.name === "Amogh V K" && styles.profileImageAmogh,
@@ -163,6 +183,45 @@ export default function FounderDetails({ loaderData }: Route.ComponentProps) {
                         <AnimatedSection animation="zoom" delay={600}>
                             <h3 className={styles.visionTitle}>Personal Vision</h3>
                             <p className={styles.visionQuote}>"{founder.vision}"</p>
+                        </AnimatedSection>
+                    </div>
+                </div>
+            </section>
+
+            {/* AI Answer Blocks — FAQ Section */}
+            <section className={styles.bioSection}>
+                <div className={styles.bioContent}>
+                    <div className={styles.bioText}>
+                        <AnimatedSection animation="slide-up" delay={0}>
+                            <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
+                        </AnimatedSection>
+
+                        <AnimatedSection animation="slide-up" delay={100}>
+                            <h3 className={styles.visionTitle}>Who is Amogh V K?</h3>
+                            <p className={styles.bioParagraph}>
+                                Amogh V K is the founder of EvenEi Private Limited, a technology company building Everyday Intelligence — intelligent systems that integrate naturally into daily life. {founder.bio}
+                            </p>
+                        </AnimatedSection>
+
+                        <AnimatedSection animation="slide-up" delay={200}>
+                            <h3 className={styles.visionTitle}>What does Amogh V K do?</h3>
+                            <p className={styles.bioParagraph}>
+                                Amogh V K is the {founder.role} at EvenEi Private Limited. He works on the development of intelligent systems combining full-stack software, machine learning, embedded systems, and hardware-software integration. His work spans from embedded hardware optimization to full-stack application development.
+                            </p>
+                        </AnimatedSection>
+
+                        <AnimatedSection animation="slide-up" delay={300}>
+                            <h3 className={styles.visionTitle}>What company did Amogh V K found?</h3>
+                            <p className={styles.bioParagraph}>
+                                Amogh V K founded EvenEi Private Limited, a technology company focused on building integrated software, hardware, and AI systems. Their flagship product is <Link to="/specular" className={styles.breadcrumbHome}>Specular smart glasses</Link> — the world's first memory-based smart glasses system.
+                            </p>
+                        </AnimatedSection>
+
+                        <AnimatedSection animation="slide-up" delay={400}>
+                            <h3 className={styles.visionTitle}>Where did Amogh V K study?</h3>
+                            <p className={styles.bioParagraph}>
+                                Amogh V K studied Electronics and Communication Engineering at Manipal Institute of Technology, Bengaluru. His education provided the foundation for his work in embedded systems, signal processing, and intelligent system design.
+                            </p>
                         </AnimatedSection>
                     </div>
                 </div>
