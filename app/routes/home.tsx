@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { Link } from "react-router";
+import { Link, redirect } from "react-router";
 import styles from "./home.module.css";
 import classNames from "classnames";
 import {
@@ -28,6 +28,13 @@ import {
   AnimatedGroup,
 } from "~/components/animated-section/animated-section";
 import { Footer } from "~/components/footer/footer";
+
+export function loader({ request }: Route.LoaderArgs) {
+  if (new URL(request.url).hostname === "specular.evenei.com") {
+    return redirect("/specular");
+  }
+  return null;
+}
 
 // --- Sections ---
 
