@@ -1,4 +1,14 @@
-# Welcome to React Router!
+# EvenEi website
+
+The public marketing site for EvenEi and Project Specular. It includes the vision, product, features, roadmap, pricing, documentation, founders, and contact pages.
+
+## Configuration
+
+Run `npm ci`, then `npm run dev`. Before deploying, run `npm run typecheck` and `npm run build`.
+
+The contact form stores submissions in the configured Supabase `contact_messages` table. To also send an email notification, set `GMAIL_APP_PASSWORD` in the server's environment. Never commit that value. The Gmail app password that was previously committed must be revoked and replaced before enabling email notifications again.
+
+The `project/` folder is an older copy of the site. The active app is `app/`; TypeScript checks only the active app.
 
 A modern, production-ready template for building full-stack React applications using React Router.
 

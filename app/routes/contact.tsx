@@ -25,13 +25,13 @@ import { AnimatedSection, AnimatedGroup } from "~/components/animated-section/an
 import styles from "./contact.module.css";
 
 // Gmail SMTP transporter (server-side only)
-const transporter = nodemailer.createTransport({
+const transporter = process.env.GMAIL_APP_PASSWORD ? nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "amogh.vk.0248@gmail.com",
-    pass: "ryzf rmzj qqll urtz",
+    pass: process.env.GMAIL_APP_PASSWORD,
   },
-});
+}) : null;
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -90,7 +90,7 @@ export async function action({ request }: Route.ActionArgs) {
 
     // 2. Send email notification
     try {
-      await transporter.sendMail({
+      if (transporter) await transporter.sendMail({
         from: `"EvenEi Contact Form" <amogh.vk.0248@gmail.com>`,
         to: "amogh.vk.0248@gmail.com",
         replyTo: email.trim(),
